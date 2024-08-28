@@ -2,15 +2,15 @@ import { GithubLogo, LinkedinLogo } from '@phosphor-icons/react'
 
 function Sobre() {
   return (
-    <div className=' flex  flex-col place-items-center text-center px-20 py-20 w-full'>
+    <div className=' flex flex-col place-items-center text-center px-20 py-20 w-full'>
         <h1 className='text-4xl font-bold mb-5 text-green-2'>Quem Somos</h1>
         <div className='max-w-screen-lg text-center'>
-            <p className='text-lg'>  Somos um grupo de estudantes do bootcamp da Generation Brasil, apaixonados por tecnologia e inovação.
+            <p className='text-lg mb-5'>  Somos um grupo de estudantes do bootcamp da Generation Brasil, apaixonados por tecnologia e inovação.
                 Nosso objetivo é criar soluções que impactem positivamente a vida das pessoas, utilizando as mais recentes tecnologias e melhores práticas de desenvolvimento de software. 
                 Com uma formação diversa, trazemos diferentes perspectivas e habilidades para nossos projetos, o que nos permite abordar problemas de forma criativa e eficaz.
             </p>
         </div>
-    <div className=' flex flex-wrap justify-center gap-5 py-10   '>
+    <div className=' flex flex-wrap justify-center gap-5 py-10 bg-green-1 w-11/12'>
 
          <div className='
              w-72
