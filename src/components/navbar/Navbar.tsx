@@ -1,71 +1,51 @@
-import { UserCircle } from "@phosphor-icons/react";
+import { List, PlusSquare, UserCircle } from "@phosphor-icons/react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
+
 function Navbar() {
+
+  const [isOpen,setisOpen] = useState(false)
+
+  function toggleMenu () {
+    setisOpen(!isOpen)
+  }
+  
   return (
-    <>
-      <div className="bg-white shadow-md">
-        <div className="flex container justify-between items-center w-full mx-auto px-4 py-4">
-          <div className="flex-1">
-            <a href="/">
-              <img
-                src="https://ik.imagekit.io/kraz0dx3n/vital+/Logoa-removebg-preview.png?updatedAt=1724785565304"
-                alt="Logo-Vital+"
-                className="w-1/4 h-auto"
-              />
-            </a>
+    <header className='flex justify-center shadow-md text-green-700 text-sm lg:text-base'>
+      <nav className=" flex justify-around items-center w-full">
+         {/* Logo*/}
+        <div>     
+          <Link to= '/'>
+            <img src="https://ik.imagekit.io/iixrkkdfp/Loja%20Games%20/vita.png?updatedAt=1725320162845" alt="" width={70} height={70} />
+          </Link>
+        </div>
+         {/* Lista*/}
+        <div>
+          <ul className={`mx-3 md:flex gap-6 mx-0 *:font-bold ${isOpen ? 'block' : 'hidden'}`}>
+            <li className="hover:underline cursor-pointer">Serviços</li>
+            <li className="hover:underline cursor-pointer">Como Funciona</li>
+            <li className="hover:underline cursor-pointer"><Link to='/sobre'>Quem Somos</Link></li>
+            <li className="hover:underline cursor-pointer">Contato</li>
+          </ul>
+        </div>
+      
+        <div className="flex items-center">
+          {/* Botão Hamburguer*/}
+          <div className="md:hidden">
+            <List size={32} onClick={toggleMenu}/>
           </div>
-          <div className="flex-1 flex justify-center">
-            <div className="relative w-2/3">
-              <input
-                id="busca"
-                type="text"
-                placeholder="Busque um serviço"
-                className="pl-5 py-2 pr-4 border border-green-3 rounded-md focus:outline-none  focus:ring-green-500 w-full"
-                style={{ fontSize: '0.75rem' }} 
-              />
-              
-            </div>
-          </div>
-          <div className="flex  justify-end">
-            <nav>
-              <ul className="flex gap-8 items-center">
-                <li>
-                  <a href="" className="
-                  font-semibold text-green-2 hover:text-green-1">
-                    Serviços
-                  </a>
-                </li>
-                <li>
-                  <a href="" className="
-                  font-semibold text-green-2 hover:text-green-1">
-                    Como Funciona
-                  </a>
-                </li>
-                <li>
-                  <Link to = "/sobre">
-                  <a href="" className="
-                  font-semibold text-green-2 hover:text-green-1">
-                    Quem Somos
-                  </a>
-                  </Link>
-                </li>
-                <li>
-                  <a href="" className=" font-semibold text-green-2 hover:text-green-1">
-                    Contato
-                  </a>
-                </li>
-                <li>
-                  <a href="#login"><UserCircle size={28} color="#437228" /></a>
-                </li>
-              </ul>
-            </nav>
+          {/* Login*/}
+          <div className=" hidden md:flex items-center">
+            <div><UserCircle size={32}/></div>
+            <span className="mx-2 font-bold hover:underline cursor-pointer">Entre</span> ou 
+            <span className="mx-2 font-bold hover:underline cursor-pointer">Cadastre-se</span>
           </div>
         </div>
-      </div>
-     
-   </>
+      </nav>
+    </header>
   );
 }
 
-export default Navbar;
+export default Navbar
+
