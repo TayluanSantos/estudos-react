@@ -2,9 +2,11 @@ import { GithubLogo, LinkedinLogo } from '@phosphor-icons/react'
 
 function Sobre() {
   return (
-    <div className='bg-green-400 min-h-screen'>
-        Quem somos
-    </div>
+    <>
+      <div className='bg-green-600 min-h-screen'>
+        Sobre
+      </div>
+    </>
   )
 }
 
